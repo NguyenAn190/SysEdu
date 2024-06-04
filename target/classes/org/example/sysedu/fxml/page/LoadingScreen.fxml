@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="org.example.sysedu.controller.LoadingScreenController"
+            prefHeight="500.0" prefWidth="900.0">
+    <VBox>
+        <HBox>
+            <StackPane>
+                <ImageView styleClass="image-view, mb-5">
+                    <fitWidth>900</fitWidth>
+                    <fitHeight>500</fitHeight>
+                    <Image url="D:\FPT Polytechnic\SysEdu\SysEdu\src\main\resources\org\example\sysedu\images\banner.jpg"/>
+                </ImageView>
+            </StackPane>
+        </HBox>
+        <HBox>
+            <ProgressBar fx:id="progressBar" prefWidth="300" style="-fx-pref-width: 900px"/>
+        </HBox>
+    </VBox>
+</AnchorPane>

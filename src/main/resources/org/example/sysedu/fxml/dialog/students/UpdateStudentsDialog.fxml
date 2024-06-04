@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.image.ImageView?>
+<DialogPane prefHeight="400.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx"
+            fx:controller="org.example.sysedu.controller.dialog.students.UpdateStudentsDialogController"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:id="dialogPane"
+            styleClass="root" style="-fx-padding: 10px 50px 30px 50px ">
+    <content>
+        <VBox spacing="8">
+            <VBox spacing="4">
+                <VBox spacing="20">
+                    <VBox spacing="8">
+                        <Label text="Nhập điểm người học"/>
+                        <TextField fx:id="scoreField" promptText="Full Name" styleClass="input-dialog"/>
+                        <Label fx:id="errorScoreLabel" styleClass="error, text-danger"/>
+                    </VBox>
+                </VBox>
+            </VBox>
+            <Region VBox.vgrow="ALWAYS"/>
+            <VBox>
+                <Region HBox.hgrow="ALWAYS"/>
+                <HBox spacing="20">
+                    <Region HBox.hgrow="ALWAYS"/>
+                    <Button text="Đóng" style="-fx-pref-width: 100px" styleClass="btn-cancel" onAction="#handleCancel"/>
+                    <Button text="Xóa" style="-fx-pref-width: 100px" fx:id="deleteButton" styleClass="btn-delete" onAction="#handleDelete"/>
+                    <Button text="Cập nhật" style="-fx-pref-width: 100px" styleClass="btn-create" onAction="#handleUpdate"/>
+                </HBox>
+            </VBox>
+        </VBox>
+    </content>
+</DialogPane>

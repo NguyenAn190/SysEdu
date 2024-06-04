@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.image.ImageView?>
+<DialogPane prefHeight="700.0" prefWidth="600.0" xmlns="http://javafx.com/javafx"
+            fx:controller="org.example.sysedu.controller.dialog.courses.AddCoursesDialogController"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:id="dialogPane"
+            styleClass="root" style="-fx-padding: 10px 50px 30px 50px ">
+    <content>
+        <VBox spacing="8">
+
+            <VBox>
+                <VBox spacing="8" prefWidth="450">
+                    <Label text="Chọn chuyên đề"/>
+                    <ComboBox fx:id="topicComboBox" style="-fx-pref-width: 500px"/>
+                    <Label fx:id="errorTopicComboBox" styleClass="error, text-danger"/>
+                </VBox>
+                <VBox spacing="8">
+                    <Label text="Tên khóa học"/>
+                    <TextField fx:id="courseNameField" styleClass="input-dialog" promptText="34"/>
+                    <Label fx:id="errorCourseNameLabel" styleClass="error, text-danger"/>
+                </VBox>
+                <VBox spacing="8">
+                    <Label text="Thời lượng"/>
+                    <TextField fx:id="timeField" styleClass="input-dialog" promptText="34"/>
+                    <Label fx:id="errorTimeLabel" styleClass="error, text-danger"/>
+                </VBox>
+                <VBox spacing="8">
+                    <Label text="Ngày khai giảng"/>
+                    <DatePicker fx:id="declarationDatePicker" styleClass="date-picker-dialog" promptText="19/09/2003"/>
+                    <Label fx:id="errorDeclarationDateLabel" styleClass="error, text-danger"/>
+                </VBox>
+                <VBox spacing="8">
+                    <Label text="Mô tả khóa học"/>
+                    <TextArea fx:id="descriptionField"
+                              style="-fx-pref-height: 100px; -fx-wrap-text: true; -fx-background-color: white"
+                              styleClass="input-dialog" promptText="Mô tả"/>
+                    <Label styleClass="error, text-danger"/>
+                </VBox>
+            </VBox>
+            <Region VBox.vgrow="ALWAYS"/>
+            <VBox>
+                <Region HBox.hgrow="ALWAYS"/>
+                <HBox spacing="20">
+                    <Region HBox.hgrow="ALWAYS"/>
+                    <Button text="Hủy" styleClass="btn-cancel" onAction="#handleCancel"/>
+                    <Button text="Thêm" styleClass="btn-create" onAction="#handleCreate"/>
+                </HBox>
+            </VBox>
+        </VBox>
+    </content>
+</DialogPane>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<?import java.net.URL?>
+
+
+<AnchorPane prefHeight="900.0" prefWidth="1440.0" xmlns="http://javafx.com/javafx/16"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.sysedu.controller.RegisterController">
+    <VBox alignment="CENTER" spacing="20.0" styleClass="root,text-center" layoutX="450" layoutY="50.0">
+        <ImageView styleClass="image-view, mb-5">
+            <image>
+                <Image url="D:\FPT Polytechnic\SysEdu\SysEdu\src\main\resources\org\example\sysedu\images\dark.png"/>
+            </image>
+        </ImageView>
+        <VBox spacing="10.0" styleClass="text-center, bg-login, p-40">
+            <HBox styleClass="text-center">
+                <VBox spacing="30.0">
+                    <Label styleClass="h2, pb-20" text="Đăng ký tài khoản"/>
+                </VBox>
+            </HBox>
+            <HBox spacing="10.0" >
+                <VBox spacing="5.0">
+                    <Label styleClass="label" text="Họ và tên:"/>
+                    <TextField fx:id="fullNameField" styleClass="input-field" promptText="username"/>
+                    <Label fx:id="errorFullNameLabel" styleClass="label, text-danger, error"/>
+                </VBox>
+            </HBox>
+            <HBox spacing="10.0" >
+                <VBox spacing="5.0">
+                    <Label styleClass="label" text="Tên người dùng:"/>
+                    <TextField fx:id="usernameField" styleClass="input-field" promptText="username"/>
+                    <Label fx:id="errorUserNameLabel" styleClass="label, text-danger, error"/>
+                </VBox>
+            </HBox>
+            <HBox spacing="10.0">
+                <VBox spacing="5.0">
+                    <Label styleClass="label" text="Mật khẩu:"/>
+                    <PasswordField fx:id="passwordField" styleClass="input-field, password-field" promptText="••••••••"/>
+                    <Label fx:id="errorPasswordLabel" styleClass="label, text-danger, error"/>
+                </VBox>
+            </HBox>
+            <HBox spacing="10.0">
+                <VBox spacing="5.0">
+                    <Label styleClass="label" text="Nhập lại mật khẩu:"/>
+                    <PasswordField fx:id="confirmPasswordField" styleClass="input-field, password-field" promptText="••••••••"/>
+                    <Label fx:id="errorConfirmPasswordLabel" styleClass="label, text-danger, error"/>
+                </VBox>
+            </HBox>
+            <Button text="Đăng ký" styleClass="button, mb-1 " onAction="#loginAction"/>
+            <HBox spacing="10.0">
+                <Label styleClass="label" text="Bạn đã có tài khoản? "/>
+                <Region HBox.hgrow="ALWAYS"/>
+                <Label fx:id="registerForm" styleClass="label, text-orangce, cusor-poiter"
+                       onMouseClicked="#redirectToLoginAction" text="Đăng nhập ngay"/>
+            </HBox>
+        </VBox>
+    </VBox>
+</AnchorPane>

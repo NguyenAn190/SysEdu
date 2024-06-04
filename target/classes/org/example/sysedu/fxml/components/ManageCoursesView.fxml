@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.chart.PieChart?>
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="org.example.sysedu.controller.components.ManageCoursesController">
+    <HBox>
+        <VBox spacing="20">
+            <VBox spacing="20" prefHeight="300">
+                <HBox>
+                    <Label text="QUẢN LÍ KHÓA HỌC" styleClass="h3"/>
+                    <Region HBox.hgrow="ALWAYS"/>
+                    <Button text="Thêm khóa học" onAction="#handleOpenDialog" styleClass="btn, btn-add"/>
+                </HBox>
+                <HBox prefWidth="400" prefHeight="240">
+                    <VBox prefHeight="240">
+                        <HBox style="-fx-padding: 0 0 10px 0">
+                            <VBox>
+                                <Label text="Thông tin chức năng quản lí khóa học" styleClass="h5"
+                                       style="-fx-padding: 0 0 10px 0"/>
+                                <Label style="-fx-pref-width: 450px; -fx-wrap-text: true;"
+                                       text="Dễ dàng thống kê thông tin về khóa học không chỉ giúp bạn hiểu rõ hơn về các khóa học mà còn giúp bạn quản lý chương trình đào tạo một cách hiệu quả. Bằng cách nắm bắt được xu hướng và các chỉ số quan trọng về khóa học, bạn có thể điều chỉnh chiến lược giảng dạy của mình một cách linh hoạt và đáp ứng tốt hơn các nhu cầu đa dạng của học viên."/>
+                            </VBox>
+                        </HBox>
+                        <Region VBox.vgrow="ALWAYS" />
+                        <HBox spacing="20">
+                            <VBox styleClass="card"
+                                  style="-fx-pref-width: 250px; -fx-pref-height: 80px !important; -fx-padding: 5px"
+                                  alignment="CENTER">
+                                <HBox alignment="CENTER">
+                                    <Label text="1000 " styleClass="h4, text-orangce" style="-fx-background-color: #fff"
+                                           fx:id="countCourse"/>
+                                    <Label text="khóa học" styleClass="text-orangce" style="-fx-padding: 8px 0 0 0"/>
+                                </HBox>
+                                <Label text="Tổng số khóa học"/>
+                            </VBox>
+                            <VBox styleClass="card"
+                                  style="-fx-pref-width: 200px; -fx-pref-height: 80px !important; -fx-padding: 5px"
+                                  alignment="CENTER">
+                                <HBox alignment="CENTER">
+                                    <Label text="1000 " styleClass="h4, text-orangce" style="-fx-background-color: #fff"
+                                           fx:id="countCourseByYear"/>
+                                    <Label text=" khóa học" styleClass="text-orangce" style="-fx-padding: 8px 0 0 0"/>
+                                </HBox>
+                                <Label text="Trong năm nay"/>
+                            </VBox>
+                        </HBox>
+                    </VBox>
+                    <Region HBox.hgrow="ALWAYS"/>
+                    <VBox prefHeight="240" prefWidth="500">
+                        <BarChart fx:id="barChart" title="Thống kê khóa học" styleClass="bar-chart">
+                            <xAxis>
+                                <CategoryAxis fx:id="xAxis" label=""/>
+                            </xAxis>
+                            <yAxis>
+                                <NumberAxis label=""/>
+                            </yAxis>
+                        </BarChart>
+                    </VBox>
+                </HBox>
+            </VBox>
+            <VBox spacing="10.0" style="-fx-background-color: #fff;">
+                <HBox spacing="30.0" style="-fx-padding: 10px 10px 10px 10px">
+                    <TextField fx:id="searchCourse" styleClass="input-search" onKeyTyped="#handleSearch" promptText="Tìm kiếm"/>
+                    <ComboBox fx:id="topicNameBox" styleClass="combo-box" onAction="#handleChangeStatus"/>
+                    <ComboBox fx:id="statusCourseBox" styleClass="combo-box" onAction="#handleChangeStatus">
+                        <items>
+                            <FXCollections fx:factory="observableArrayList">
+                                <String fx:value="Đang hoạt động"/>
+                                <String fx:value="Đã xóa"/>
+                            </FXCollections>
+                        </items>
+                    </ComboBox>
+                </HBox>
+                <TableView fx:id="courseTable" onMouseClicked="#handleTableRowClick" prefHeight="450.0" prefWidth="1000.0"/>
+            </VBox>
+        </VBox>
+    </HBox>
+</AnchorPane>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<DialogPane prefHeight="700.0" prefWidth="600.0" xmlns="http://javafx.com/javafx"
+            fx:controller="org.example.sysedu.controller.dialog.learners.AddLearnersDialogController"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:id="dialogPane"
+            styleClass="root" style="-fx-padding: 10px 50px 30px 30px ">
+    <content>
+        <VBox spacing="8">
+           <VBox spacing="4">
+
+               <VBox spacing="8">
+                   <Label text="Tên người học"/>
+                   <TextField fx:id="fullNameField" promptText="Full Name" styleClass="input-dialog"/>
+                   <Label fx:id="errorFullNameLabel" styleClass="error, text-danger"/>
+               </VBox>
+               <VBox>
+                   <HBox>
+                       <HBox>
+                           <VBox spacing="8">
+                               <VBox>
+                                   <Label text="Giới tính"/>
+                               </VBox>
+                               <HBox style="-fx-padding: 10px 20px 0 0" spacing="20">
+                                   <RadioButton text="Nam" userData="true" fx:id="maleRadioButton" />
+                                   <RadioButton text="Nữ" userData="false" fx:id="femaleRadioButton" />
+                               </HBox >
+                               <VBox>
+                                   <Label styleClass="error, text-danger"/>
+                               </VBox>
+                           </VBox>
+                       </HBox>
+                       <Region HBox.hgrow="ALWAYS"/>
+                       <HBox>
+                           <VBox spacing="8">
+                               <Label text="Ngày sinh"/>
+                               <DatePicker fx:id="birthDatePicker"  styleClass="date-picker-dialog" promptText="19/09/2003"/>
+                               <Label fx:id="errorBirthDateLabel" styleClass="error, text-danger"/>
+                           </VBox>
+                       </HBox>
+                   </HBox>
+               </VBox>
+               <VBox spacing="8">
+                   <Label text="Điện thoại"/>
+                   <TextField fx:id="phoneNumberField"  styleClass="input-dialog" promptText="0123456789"/>
+                   <Label fx:id="errorPhoneNumberLabel" styleClass="error, text-danger"/>
+               </VBox>
+               <VBox spacing="8">
+                   <Label text="Email"/>
+                   <TextField fx:id="emailField"  styleClass="input-dialog" promptText="example@gmail.com"/>
+                   <Label fx:id="errorEmailLabel" styleClass="error, text-danger"/>
+               </VBox>
+               <VBox spacing="8">
+                   <Label text="Ghi chú"/>
+                   <TextArea fx:id="noteField" style="-fx-pref-height: 100px; -fx-wrap-text: true; -fx-background-color: white" styleClass="input-dialog" promptText="Ghi chú"/>
+                   <Label styleClass="error, text-danger"/>
+               </VBox>
+           </VBox>
+            <Region VBox.vgrow="ALWAYS"/>
+            <VBox>
+                <Region HBox.hgrow="ALWAYS"/>
+                <HBox spacing="20">
+                    <Region HBox.hgrow="ALWAYS"/>
+                    <Button text="Hủy" styleClass="btn-cancel" onAction="#handleCancel"/>
+                    <Button text="Thêm" styleClass="btn-create" onAction="#handleCreate"/>
+                </HBox>
+            </VBox>
+        </VBox>
+    </content>
+</DialogPane>

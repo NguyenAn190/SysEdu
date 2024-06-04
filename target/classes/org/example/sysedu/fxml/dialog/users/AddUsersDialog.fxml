@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<DialogPane prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx"
+            fx:controller="org.example.sysedu.controller.dialog.users.AddUsersDialogController"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:id="dialogPane"
+            styleClass="root" style="-fx-padding: 10px 50px 30px 30px ">
+    <content>
+        <VBox spacing="8">
+            <VBox spacing="4">
+                <VBox spacing="8">
+                    <Label text="Username"/>
+                    <TextField fx:id="usernameField" styleClass="input-dialog" promptText="username"/>
+                    <Label fx:id="errorUsernameLabel" styleClass="error, text-danger"/>
+                </VBox>
+                <VBox spacing="8">
+                    <Label text="Password"/>
+                    <PasswordField fx:id="passwordField" styleClass="input-dialog" promptText="*******"/>
+                    <Label fx:id="errorPasswordLabel" styleClass="error, text-danger"/>
+                </VBox>
+                <VBox spacing="8">
+                    <Label text="Họ và tên"/>
+                    <TextField fx:id="fullNameField" promptText="Nguyễn Văn A" styleClass="input-dialog"/>
+                    <Label fx:id="errorFullNameLabel" styleClass="error, text-danger"/>
+                </VBox>
+                <VBox>
+                    <VBox>
+                        <Label text="Loại tài khoản"/>
+                    </VBox>
+                    <HBox style="-fx-padding: 10px 20px 0 0" spacing="20">
+                        <RadioButton text="Admin" userData="ADMIN" fx:id="adminRadioButton"/>
+                        <RadioButton text="User" userData="USER" fx:id="userRadioButton"/>
+                    </HBox>
+                </VBox>
+            </VBox>
+            <Region VBox.vgrow="ALWAYS"/>
+            <VBox>
+                <Region HBox.hgrow="ALWAYS"/>
+                <HBox spacing="20">
+                    <Region HBox.hgrow="ALWAYS"/>
+                    <Button text="Hủy" styleClass="btn-cancel" onAction="#handleCancel"/>
+                    <Button text="Thêm" styleClass="btn-create" onAction="#handleCreate"/>
+                </HBox>
+            </VBox>
+        </VBox>
+    </content>
+</DialogPane>

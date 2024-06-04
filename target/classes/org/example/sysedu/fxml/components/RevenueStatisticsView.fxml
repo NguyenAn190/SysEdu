@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.chart.PieChart?>
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="org.example.sysedu.controller.components.RevenueStatisticsController">
+    <HBox>
+        <VBox spacing="20">
+            <VBox spacing="20" prefHeight="300">
+                <HBox>
+                    <Label text="THỐNG KÊ DOANH THU" styleClass="h3"/>
+                </HBox>
+                <HBox prefWidth="400">
+                    <VBox prefHeight="240" prefWidth="450">
+                        <PieChart fx:id="pieChart" title="So với năm trước" styleClass="bar-chart"/>
+                    </VBox>
+                    <Region HBox.hgrow="ALWAYS"/>
+                    <VBox prefHeight="240" prefWidth="500">
+                        <BarChart fx:id="barChart" title="Top 5 chuyên đề có doanh thu cao nhất" styleClass="bar-chart">
+                            <xAxis>
+                                <CategoryAxis fx:id="xAxis" label=""/>
+                            </xAxis>
+                            <yAxis>
+                                <NumberAxis label=""/>
+                            </yAxis>
+                        </BarChart>
+                    </VBox>
+                </HBox>
+            </VBox>
+            <VBox spacing="10.0" style="-fx-background-color: #fff;">
+                <HBox spacing="30.0" style="-fx-padding: 10px 10px 10px 10px">
+                    <DatePicker fx:id="startDatePicker" onAction="#handleChangStartDate" styleClass="date-picker-dialog" promptText="Ngày bắt đầu"/>
+                    <DatePicker fx:id="endDatePicker" onAction="#handleChangEndDate" styleClass="date-picker-dialog" promptText="Ngày kết thúc"/>
+                </HBox>
+                <TableView fx:id="revenueTable" prefHeight="450.0" prefWidth="1000.0"/>
+            </VBox>
+        </VBox>
+    </HBox>
+</AnchorPane>

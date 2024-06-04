@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.image.ImageView?>
+<DialogPane prefHeight="700.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx"
+            fx:controller="org.example.sysedu.controller.dialog.topics.UpdateTopicsDialogController"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:id="dialogPane"
+            styleClass="root" style="-fx-padding: 10px 50px 30px 50px ">
+    <content>
+        <VBox spacing="8">
+            <VBox spacing="4">
+                <VBox style="-fx-padding: 0 0 20px 0">
+                    <Label styleClass="h3">THÊM CHUYÊN ĐỀ</Label>
+                </VBox>
+                <HBox spacing="50">
+                    <VBox>
+                        <VBox spacing="30">
+                            <VBox spacing="8">
+                                <StackPane>
+                                    <ImageView fx:id="imageView" fitWidth="450" fitHeight="450" preserveRatio="true"/>
+                                </StackPane>
+                                <StackPane>
+                                    <Label fx:id="errorImage" styleClass="error"  style="-fx-padding: 4px"/>
+                                </StackPane>
+                            </VBox>
+                            <StackPane>
+                                <Button text="Thêm hình ảnh" styleClass="btn-add-image" onAction="#handleAddImage"/>
+                            </StackPane>
+                        </VBox>
+                    </VBox>
+                    <VBox>
+                        <VBox spacing="8">
+                            <Label text="Tên chuyên dề"/>
+                            <TextField fx:id="topicNameFiled" styleClass="input-dialog" promptText="Java cơ bản"/>
+                            <Label fx:id="errorTopicNameLabel" styleClass="error, text-danger"/>
+                        </VBox>
+                        <VBox spacing="8">
+                            <Label text="Thời lượng"/>
+                            <TextField fx:id="timeFiled" styleClass="input-dialog" promptText="3"/>
+                            <Label fx:id="errorTimeLabel" styleClass="error, text-danger"/>
+                        </VBox>
+                        <VBox spacing="8">
+                            <Label text="Học phí"/>
+                            <TextField fx:id="tuitionFeeFiled" styleClass="input-dialog" promptText="200,000"/>
+                            <Label fx:id="errorTuitionFeeLabel" styleClass="error, text-danger"/>
+                        </VBox>
+                        <VBox spacing="8">
+                            <Label text="Mô tả chuyên đề" />
+                            <TextArea fx:id="descriptionField" style="-fx-pref-height: 100px; -fx-wrap-text: true; -fx-background-color: white" styleClass="input-dialog" promptText="Mô tả"/>
+                        </VBox>
+                    </VBox>
+                </HBox>
+            </VBox>
+            <Region VBox.vgrow="ALWAYS"/>
+            <VBox>
+                <Region HBox.hgrow="ALWAYS"/>
+                <HBox spacing="20">
+                    <Region HBox.hgrow="ALWAYS"/>
+                    <Button text="Đóng" style="-fx-pref-width: 100px" styleClass="btn-cancel" onAction="#handleCancel"/>
+                    <Button text="Khôi phục" style="-fx-pref-width: 150px" fx:id="restoreButton" styleClass="btn-update" onAction="#handleRestore"/>
+                    <Button text="Xóa" style="-fx-pref-width: 100px" fx:id="deleteButton" styleClass="btn-delete" onAction="#handleDelete"/>
+                    <Button text="Cập nhật" style="-fx-pref-width: 100px" styleClass="btn-create" onAction="#handleUpdate"/>
+                </HBox>
+            </VBox>
+        </VBox>
+    </content>
+</DialogPane>

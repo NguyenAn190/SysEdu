@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<DialogPane prefHeight="700.0" prefWidth="650.0" xmlns="http://javafx.com/javafx"
+            fx:controller="org.example.sysedu.controller.dialog.users.UpdateUsersDialogController"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:id="dialogPane"
+            styleClass="root" style="-fx-padding: 30px">
+    <content>
+        <VBox spacing="8">
+            <VBox spacing="4">
+                <VBox spacing="8">
+                    <Label text="Username"/>
+                    <TextField fx:id="usernameField" styleClass="input-dialog" promptText="0123456789"/>
+                    <Label fx:id="errorUsernameLabel" styleClass="error, text-danger"/>
+                </VBox>
+                <VBox spacing="8">
+                    <Label text="Họ và tên"/>
+                    <TextField fx:id="fullNameField" promptText="Full Name" styleClass="input-dialog"/>
+                    <Label fx:id="errorFullNameLabel" styleClass="error, text-danger"/>
+                </VBox>
+                <VBox>
+                    <VBox>
+                        <Label text="Loại tài khoản"/>
+                    </VBox>
+                    <HBox style="-fx-padding: 10px 20px 0 0" spacing="20">
+                        <RadioButton text="Admin" userData="ADMIN" fx:id="adminRadioButton"/>
+                        <RadioButton text="User" userData="USER" fx:id="userRadioButton"/>
+                    </HBox>
+                </VBox>
+            </VBox>
+            <Region VBox.vgrow="ALWAYS"/>
+            <VBox>
+                <Region HBox.hgrow="ALWAYS"/>
+                <HBox spacing="20">
+                    <Region HBox.hgrow="ALWAYS"/>
+                    <Button text="Đóng" style="-fx-pref-width: 100px" styleClass="btn-cancel" onAction="#handleCancel"/>
+                    <Button text="Khôi phục" style="-fx-pref-width: 150px" fx:id="restoreButton" styleClass="btn-update" onAction="#handleRestore"/>
+                    <Button text="Xóa" style="-fx-pref-width: 100px" fx:id="deleteButton" styleClass="btn-delete" onAction="#handleDelete"/>
+                    <Button text="Cập nhật" style="-fx-pref-width: 100px" styleClass="btn-create" onAction="#handleUpdate"/>
+                </HBox>
+            </VBox>
+        </VBox>
+    </content>
+</DialogPane>

@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.fxml.FXMLLoader?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.PieChart?>
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="org.example.sysedu.controller.HomeController"
+            prefHeight="900.0" prefWidth="1440.0"
+            styleClass="root" >
+    <StackPane  prefHeight="900.0" prefWidth="1440.0" fx:id="rootPane"/>
+    <!-- Phần menu dọc -->
+
+    <HBox prefWidth="400" prefHeight="950">
+        <VBox styleClass="nav" fx:id="navigationPane" BorderPane.alignment="CENTER_RIGHT" prefWidth="340.0">
+            <!-- Logo -->
+            <StackPane prefWidth="400.0" style="-fx-padding: 40px 0 40px 0">
+                <ImageView styleClass="image-view, mb-5, text-center, w-400">
+                    <fitWidth>150</fitWidth>
+                    <fitHeight>60</fitHeight>
+                    <Image url="D:\FPT Polytechnic\SysEdu\SysEdu\src\main\resources\org\example\sysedu\images\dark.png"/>
+                </ImageView>
+            </StackPane>
+            <!-- Container chứa các Button -->
+            <VBox prefHeight="900.0" prefWidth="400.0" spacing="10.0">
+                <Button styleClass="btn-nav, active-nav" fx:id="manageLearnersButton" onAction="#handleManageLearners">
+                    <graphic>
+                        <HBox spacing="10" alignment="CENTER_LEFT" style="-fx-padding: 5px 20px 5px 20px;">
+                            <ImageView>
+                                <Image url="/org/example/sysedu/images/nav-icon/icons8-student-24.png"/>
+                            </ImageView>
+                            <Label style=" -fx-font-size: 14px" text="Quản Lí Người Học"/>
+                        </HBox>
+                    </graphic>
+                </Button>
+                <Button styleClass="btn-nav" fx:id="manageStudentsButton" onAction="#handleManageStudents">
+                    <graphic>
+                        <HBox spacing="10" alignment="CENTER_LEFT" style="-fx-padding: 5px 20px 5px 20px;">
+                            <ImageView>
+                                <Image url="/org/example/sysedu/images/nav-icon/icons8-student-center-24.png"/>
+                            </ImageView>
+                            <Label style=" -fx-font-size: 14px" text="Quản Lý Học Viên"/>
+                        </HBox>
+                    </graphic>
+                </Button>
+                <Button styleClass="btn-nav" fx:id="manageTopicsButton" onAction="#handleManageTopics">
+                    <graphic>
+                        <HBox spacing="10" alignment="CENTER_LEFT" style="-fx-padding: 5px 20px 5px 20px;">
+                            <ImageView>
+                                <Image url="/org/example/sysedu/images/nav-icon/icons8-book-24.png"/>
+                            </ImageView>
+                            <Label style=" -fx-font-size: 14px" text="Quản Lý Chuyên Đề"/>
+                        </HBox>
+                    </graphic>
+                </Button>
+                <Button styleClass="btn-nav" fx:id="manageCoursesButton" onAction="#handleManageCourses">
+                    <graphic>
+                        <HBox spacing="10" alignment="CENTER_LEFT" style="-fx-padding: 5px 20px 5px 20px;">
+                            <ImageView>
+                                <Image url="/org/example/sysedu/images/nav-icon/icons8-course-24.png"/>
+                            </ImageView>
+                            <Label style=" -fx-font-size: 14px" text="Quản Lý Khóa Học"/>
+                        </HBox>
+                    </graphic>
+                </Button>
+                <Button styleClass="btn-nav" fx:id="manageUsersButton" onAction="#handleManageUsers">
+                    <graphic>
+                        <HBox spacing="10" alignment="CENTER_LEFT" style="-fx-padding: 5px 20px 5px 20px;">
+                            <ImageView>
+                                <Image url="/org/example/sysedu/images/nav-icon/icons8-staff-24.png"/>
+                            </ImageView>
+                            <Label style=" -fx-font-size: 14px" text="Quản Lý Tài Khoản"/>
+                        </HBox>
+                    </graphic>
+                </Button>
+                <Button styleClass="btn-nav" fx:id="manageScoreboardButton" onAction="#handleManageScoreboard">
+                    <graphic>
+                        <HBox spacing="10" alignment="CENTER_LEFT" style="-fx-padding: 5px 20px 5px 20px;">
+                            <ImageView>
+                                <Image url="/org/example/sysedu/images/nav-icon/icons8-chart-24 (2).png"/>
+                            </ImageView>
+                            <Label style=" -fx-font-size: 14px" text="Thống kê bảng điểm"/>
+                        </HBox>
+                    </graphic>
+                </Button>
+                <Button styleClass="btn-nav" fx:id="manageCourseStatisticsButton" onAction="#handleCourseStatistics">
+                    <graphic>
+                        <HBox spacing="10" alignment="CENTER_LEFT" style="-fx-padding: 5px 20px 5px 20px;">
+                            <ImageView>
+                                <Image url="/org/example/sysedu/images/nav-icon/icons8-chart-24 (3).png"/>
+                            </ImageView>
+                            <Label style=" -fx-font-size: 14px" text="Thống kê khóa học"/>
+                        </HBox>
+                    </graphic>
+                </Button>
+                <Button styleClass="btn-nav" fx:id="manageScoreStatisticsButton" onAction="#handleScoreStatidtics">
+                    <graphic>
+                        <HBox spacing="10" alignment="CENTER_LEFT" style="-fx-padding: 5px 20px 5px 20px;">
+                            <ImageView>
+                                <Image url="/org/example/sysedu/images/nav-icon/icons8-score-24.png"/>
+                            </ImageView>
+                            <Label style=" -fx-font-size: 14px" text="Thống kê điểm chuyên đề"/>
+                        </HBox>
+                    </graphic>
+                </Button>
+                <Button styleClass="btn-nav" fx:id="manageRevenueButton" onAction="#handleRevenueStatistics">
+                    <graphic>
+                        <HBox spacing="10" alignment="CENTER_LEFT" style="-fx-padding: 5px 20px 5px 20px;">
+                            <ImageView>
+                                <Image url="/org/example/sysedu/images/nav-icon/icons8-chart-24.png"/>
+                            </ImageView>
+                            <Label style=" -fx-font-size: 14px" text="Thống kê doanh thu"/>
+                        </HBox>
+                    </graphic>
+                </Button>
+                <Pane fx:id="spacer" VBox.vgrow="ALWAYS"/>
+                <VBox>
+                    <Button styleClass="btn-nav" onAction="#handleManageStudents">
+                        <graphic>
+                            <HBox spacing="10" alignment="CENTER_LEFT" style="-fx-padding: 5px 20px 5px 20px;">
+                                <ImageView>
+                                    <Image url="/org/example/sysedu/images/nav-icon/icons8-name-tag-24.png"/>
+                                </ImageView>
+                                <Label style=" -fx-font-size: 14px" text="Giới thiệu sản phẩm"/>
+                            </HBox>
+                        </graphic>
+                    </Button>
+                    <Button styleClass="btn-nav" onAction="#handleManageStudents">
+                        <graphic>
+                            <HBox spacing="10" alignment="CENTER_LEFT" style="-fx-padding: 5px 20px 5px 20px;">
+                                <ImageView>
+                                    <Image url="/org/example/sysedu/images/nav-icon/icons8-help-24.png"/>
+                                </ImageView>
+                                <Label style=" -fx-font-size: 14px" text="Hướng dẫn sử dụng"/>
+                            </HBox>
+                        </graphic>
+                    </Button>
+                    <Button styleClass="btn-nav" onAction="#handleLogout">
+                        <graphic>
+                            <HBox spacing="10" alignment="CENTER_LEFT" style="-fx-padding: 5px 20px 5px 20px;">
+                                <ImageView>
+                                    <Image url="/org/example/sysedu/images/nav-icon/icons8-imac-exit-24.png"/>
+                                </ImageView>
+                                <Label style=" -fx-font-size: 14px" text="Đăng xuất"/>
+                            </HBox>
+                        </graphic>
+                    </Button>
+                    <VBox.margin>
+                        <Insets bottom="50"/>
+                    </VBox.margin>
+                </VBox>
+            </VBox>
+        </VBox>
+    </HBox>
+    <HBox prefHeight="900" prefWidth="1000" layoutX="400.0" layoutY="50.0">
+        <!-- Phần nội dung -->
+        <HBox alignment="CENTER">
+            <BorderPane fx:id="contentPane" >
+                <center>
+                    <fx:include source="../components/ManageLearnersView.fxml" fx:id="courseListView"/>
+                </center>
+            </BorderPane>
+        </HBox>
+    </HBox>
+</AnchorPane>
+
+
+

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.image.ImageView?>
+<DialogPane prefHeight="700.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx"
+            fx:controller="org.example.sysedu.controller.dialog.students.AddStudentsDialogController"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:id="dialogPane"
+            styleClass="root" style="-fx-padding: 10px 50px 30px 50px ">
+    <content>
+        <VBox spacing="8">
+            <VBox spacing="4">
+                <VBox style="-fx-padding: 0 0 20px 0">
+                    <Label styleClass="h3">THÊM HỌC VIÊN</Label>
+                </VBox>
+                <VBox spacing="20">
+                    <VBox>
+                        <HBox>
+                            <VBox spacing="8" prefWidth="250">
+                                <Label text="Chọn chuyên đề"/>
+                                <ComboBox fx:id="topicCombobox" onAction="#handleChangeTopic" style="-fx-pref-width: 500px"/>
+                                <Label fx:id="errorTopicComboBoxLabel" styleClass="error, text-danger"/>
+                            </VBox>
+                            <Region HBox.hgrow="ALWAYS" />
+                            <VBox spacing="8" prefWidth="250">
+                                <Label text="Chọn khóa học"/>
+                                <ComboBox fx:id="courseCombobox" onAction="#handleChangeCourse" style="-fx-pref-width: 500px"/>
+                                <Label fx:id="errorCourseComboboxLabel" styleClass="error, text-danger"/>
+                            </VBox>
+                        </HBox>
+                    </VBox>
+                    <VBox spacing="8">
+                        <HBox>
+                            <TextField fx:id="searchLearners" styleClass="input-search" promptText="Tìm kiếm"/>
+                        </HBox>
+                        <TableView fx:id="learnersTable" prefHeight="550.0" prefWidth="1000.0"/>
+                        <Label fx:id="errorLearnersTableLabel" styleClass="error, text-danger"/>
+                    </VBox>
+                </VBox>
+            </VBox>
+            <Region VBox.vgrow="ALWAYS"/>
+            <VBox>
+                <Region HBox.hgrow="ALWAYS"/>
+                <HBox spacing="20">
+                    <Region HBox.hgrow="ALWAYS"/>
+                    <Button text="Hủy" styleClass="btn-cancel" onAction="#handleCancel"/>
+                    <Button text="Thêm" styleClass="btn-create" onAction="#handleCreate"/>
+                </HBox>
+            </VBox>
+        </VBox>
+    </content>
+</DialogPane>
